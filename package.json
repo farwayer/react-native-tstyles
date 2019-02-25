@@ -1,11 +1,13 @@
 {
   "name": "react-native-tstyles",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tachyons-like styles for React Native",
   "repository": "farwayer/react-native-tstyles",
   "author": "farwayer <farwayer@gmail.com>",
   "license": "WTFPL",
+  "main": "src",
   "peerDependencies": {
     "react-native": "*"
-  }
+  },
+  "dependencies": {}
 }
