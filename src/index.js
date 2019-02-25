@@ -6,7 +6,7 @@ import text from './text'
 import etc from './etc'
 
 
-export default function init(config={}) {
+export default function init(config = {}) {
   return StyleSheet.create({
     ...flex(),
     ...dimensions(config.dimensions),
@@ -15,5 +15,3 @@ export default function init(config={}) {
     ...etc(config.indexes),
   });
 }
-
-
