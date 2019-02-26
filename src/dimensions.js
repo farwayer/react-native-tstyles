@@ -6,8 +6,8 @@ const Default = [
 
 
 export default function init(dimensions = []) {
+  dimensions = dimensions.concat(Default);
   dimensions = dimensions.concat(
-    Default,
     dimensions.map(d => -d),
     0, undefined,
   );
