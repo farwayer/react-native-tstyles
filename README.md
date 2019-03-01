@@ -2,6 +2,8 @@
 
 _Tachyons-like styles for React Native_
 
+Be care: project is WIP and API can change before v1 release.
+
 ```js
 import styles from 'react-native-tstyles'
 
