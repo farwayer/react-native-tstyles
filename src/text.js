@@ -1,5 +1,4 @@
-const DefaultFontSizes = [...Array(49).keys()];
-const Text = {
+export const Text = {
   tc: {textAlign: 'center'},
   tr: {textAlign: 'right'},
   tl: {textAlign: 'left'},
@@ -15,11 +14,9 @@ const Text = {
 };
 
 
-export default function init(fontSizes = []) {
-  fontSizes = fontSizes.concat(DefaultFontSizes);
-
-  return fontSizes.reduce((res, s) => {
+export function fontSizes(sizes = []) {
+  return sizes.reduce((res, s) => {
     res[`fs${s}`] = {fontSize: s};
     return res;
-  }, Text);
+  }, {});
 }

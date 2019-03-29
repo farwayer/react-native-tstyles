@@ -1,18 +1,10 @@
-const Default = [
-  1, 2, 4, 8, 12, 16, 20, 24, 32, 40, 44, 48, 56, 64, 72, 96,
-  128, 160, 192,
-  240, 256, 288, 512,
-];
-
-
-export default function init(dimensions = []) {
-  dimensions = dimensions.concat(Default);
-  dimensions = dimensions.concat(
-    dimensions.map(d => -d),
+export function dimensions(sizes = []) {
+  sizes = sizes.concat(
+    sizes.map(d => -d),
     0, undefined,
   );
 
-  return dimensions.reduce((res, d) => {
+  return sizes.reduce((res, d) => {
     const p = d !== undefined
       ? (d >= 0 ? d : `_${-d}`)
       : 'None';
