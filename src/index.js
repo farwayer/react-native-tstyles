@@ -24,7 +24,7 @@ const Basic = {
 
 export default StyleSheet.create(Basic);
 
-export function init(config = {}) {
+export function createStyles(config = {}) {
   return StyleSheet.create({
     ...Basic,
     ...dimensions(config.dimensions),
