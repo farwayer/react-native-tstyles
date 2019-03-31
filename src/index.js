@@ -31,5 +31,6 @@ export function createStyles(config = {}) {
     ...fontSizes(config.fontSizes),
     ...indexes(config.indexes),
     ...colors(config.colors),
+    ...config.extra,
   });
 }
