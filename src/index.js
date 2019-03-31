@@ -9,7 +9,7 @@ import {indexes} from './etc'
 const DefaultDimensions = [
   1, 2, 4, 8, 12, 16, 20, 24, 32, 40, 44, 48, 56, 64, 72, 96,
   128, 160, 192,
-  240, 256, 288, 512,
+  240, 256, 288, 320, 480, 512,
 ];
 const DefaultFontSizes = [...Array(49).keys()];
 const DefaultIndexes = [...Array(11).keys()];
