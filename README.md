@@ -47,8 +47,8 @@ export default createStyles({
       fontWeight: 'bold',
       fontStyle: 'italic', 
     },
-  }
-});
+  },
+})
 ```
 
 #### view-with-text.js
