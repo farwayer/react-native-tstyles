@@ -2,9 +2,15 @@ export const Text = {
   tc: {textAlign: 'center'},
   tr: {textAlign: 'right'},
   tl: {textAlign: 'left'},
+
   tvt: {textAlignVertical: 'top'},
   tvb: {textAlignVertical: 'bottom'},
   tvc: {textAlignVertical: 'center', includeFontPadding: false},
+
+  ttn: {textTransform: 'none'},
+  ttu: {textTransform: 'uppercase'},
+  ttl: {textTransform: 'lowercase'},
+  ttc: {textTransform: 'capitalize'},
 
   bold: {fontWeight: 'bold'},
   italic: {fontStyle: 'italic'},
