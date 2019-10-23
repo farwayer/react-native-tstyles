@@ -2,6 +2,7 @@ export const Text = {
   tc: {textAlign: 'center'},
   tr: {textAlign: 'right'},
   tl: {textAlign: 'left'},
+  tj: {textAlign: 'justify'},
 
   tvt: {textAlignVertical: 'top'},
   tvb: {textAlignVertical: 'bottom'},
