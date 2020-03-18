@@ -41,3 +41,5 @@ export function createStyles(config = {}) {
   const merge = memo(mergeStyles)
   return Object.assign(merge, styles)
 }
+
+export cn from './cn'
