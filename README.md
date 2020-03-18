@@ -45,7 +45,7 @@ export default createStyles({
     White: '#ffffff',
     Purple: '#6963d6',
   },
-  extra: {
+  extra: { // custom extra styles
     boldItalic: {
       fontWeight: 'bold',
       fontStyle: 'italic', 
