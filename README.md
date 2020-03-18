@@ -4,7 +4,10 @@ _Tachyons-like styles for React Native_
 
 **Be care: project is WIP and API can change before v1 release.**
 
-There are two possible options: using default styles or init with custom config. 
+## Configuration
+
+There are two possible options: using default styles or init with a custom
+config.
 
 ### Default styles
 
@@ -20,7 +23,7 @@ function MyView() {
   } */
   
   return (
-    <View style={[s.mh16, s.f1, s.row, s.jcfe]}>
+    <View style={s(s.mh16, s.f1, s.row, s.jcfe)}>
       ...
     </View>
   )  
@@ -29,7 +32,7 @@ function MyView() {
 
 ### Init with custom config
 
-#### styles.js
+#### ui/styles.js
 
 ```js
 import {createStyles} from 'react-native-tstyles'
@@ -54,7 +57,7 @@ export default createStyles({
 #### view-with-text.js
 
 ```js
-import s from 'styles'
+import s from 'ui/styles'
 
 export default function ViewWithText({text}) {
   /* View styles: {
@@ -73,11 +76,50 @@ export default function ViewWithText({text}) {
   } */
   
   return (
-     <View style={[s.mh14, s.f1, s.row, s.jcfe, s.bgWhite]}>
-       <Text style={[s.boldItalic, s.fs56, s.purple]}>
+     <View style={s(s.mh14, s.f1, s.row, s.jcfe, s.bgWhite)}>
+       <Text style={s(s.boldItalic, s.fs56, s.purple)}>
          {text}
        </Text>
-     </View>   
+     </View>
+  )
+}
+```
+
+## Preventing extra rendering memo'ized and Pure- components
+
+Use `s()` function instead of passing array of styles to `style` prop. It will
+take care result `style` property do not change if source styles are the same.
+
+But if you sure style is different each render time (animations for example)
+than skip using `s()` to prevent unnecessary savings to style cache.
+
+## cn() helper: classname alternative for ReactNative
+
+Use `cn()` helper for generating conditional styles. 
+
+```js
+cn(
+  [flag1, onStyles1, offStyles1],
+  [flag2, onStyles2, offStyles2],
+  ...
+)
+```
+
+```js
+import s, {cn} from 'react-native-tstyles'
+
+function SelectableText({
+  enabled,
+  selected,
+  ...props
+}) {
+  const textStyle = cn(
+    [enabled, s.fs16, s.fs14],
+    [selected, [s.ttu, s.bold]],
+  )
+
+  return (
+    <Text {...props} style={textStyle}/>
   )
 }
 ```
