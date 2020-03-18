@@ -89,6 +89,10 @@ export default function ViewWithText({text}) {
 
 Use `s()` function instead of passing array of styles to `style` prop. It will
 take care result `style` property do not change if source styles are the same.
+Styles checked by the reference not by the value. So prevent using new js
+objects each render time like `s(s.row, {height: 160})`. If you need custom
+style than create it once and use it as function argument
+`cn(s.row, heightStyle)`.
 
 But if you sure style is different each render time (animations for example)
 than skip using `s()` to prevent unnecessary savings to style cache.
