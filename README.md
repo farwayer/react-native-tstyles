@@ -2,6 +2,8 @@
 
 _Tachyons-like styles for React Native_
 
+[![NPM version](https://img.shields.io/npm/v/react-native-tstyles.svg)](https://www.npmjs.com/package/react-native-tstyles)
+
 **Be care: project is WIP and API can change before v1 release.**
 
 ## Configuration
