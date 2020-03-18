@@ -1,4 +1,4 @@
-# React Native TStyles
+# React Native Tachyons Styles
 
 _Tachyons-like styles for React Native_
 
