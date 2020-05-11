@@ -18,6 +18,10 @@ export const Text = {
   underline: {textDecorationLine: 'underline'},
   through: {textDecorationLine: 'line-through'},
   underlineThrough: {textDecorationLine: 'underline line-through'},
+
+  b: {fontWeight: 'bold'},
+  i: {fontStyle: 'italic'},
+  u: {textDecorationLine: 'underline'},
 }
 
 
