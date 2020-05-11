@@ -28,4 +28,4 @@ export const Flex = {
 
   abs: {position: 'absolute'},
   rel: {position: 'relative'},
-};
+}

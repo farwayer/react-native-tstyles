@@ -1,20 +1,20 @@
 export function colors(colors = {}) {
   return Object.entries(colors).reduce((res, [name, color]) => {
-    name = capitalize(name);
-    res[`bg${name}`] = {backgroundColor: color};
-    res[`bc${name}`] = {borderColor: color};
+    name = capitalize(name)
+    res[`bg${name}`] = {backgroundColor: color}
+    res[`bc${name}`] = {borderColor: color}
 
-    name = decapitalize(name);
-    res[name] = {color};
+    name = decapitalize(name)
+    res[name] = {color}
 
-    return res;
+    return res
   }, {})
 }
 
 function capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
+  return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
 function decapitalize(str) {
-  return str.charAt(0).toLowerCase() + str.slice(1);
+  return str.charAt(0).toLowerCase() + str.slice(1)
 }

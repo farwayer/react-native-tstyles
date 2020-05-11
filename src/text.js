@@ -18,12 +18,12 @@ export const Text = {
   underline: {textDecorationLine: 'underline'},
   through: {textDecorationLine: 'line-through'},
   underlineThrough: {textDecorationLine: 'underline line-through'},
-};
+}
 
 
 export function fontSizes(sizes = []) {
   return sizes.reduce((res, s) => {
-    res[`fs${s}`] = {fontSize: s};
-    return res;
-  }, {});
+    res[`fs${s}`] = {fontSize: s}
+    return res
+  }, {})
 }
