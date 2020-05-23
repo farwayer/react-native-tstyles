@@ -1,5 +1,6 @@
 export const Flex = {
   f1: {flex: 1},
+  f0: {flex: 0},
   fsh1: {flexShrink: 1},
   fsh0: {flexShrink: 0},
   fg1: {flexGrow: 1},

@@ -93,15 +93,15 @@ Use `s()` function instead of passing array of styles to `style` prop. It will
 take care result `style` property do not change if source styles are the same.
 Styles checked by the reference not by the value. So prevent using new js
 objects each render time like `s(s.row, {height: 160})`. If you need custom
-style than create it once and use it as function argument
+style than you should create it once and use as function argument
 `cn(s.row, heightStyle)`.
 
-But if you sure style is different each render time (animations for example)
+If you sure style is different each render time (animations for example)
 than skip using `s()` to prevent unnecessary savings to style cache.
 
 ## cn() helper: classname alternative for ReactNative
 
-Use `cn()` helper for generating conditional styles. 
+You can use `cn()` helper for conditional styles. 
 
 ```js
 cn(
@@ -120,8 +120,8 @@ function SelectableText({
   ...props
 }) {
   const textStyle = cn(
-    [enabled, s.fs16, s.fs14],
-    [selected, [s.ttu, s.bold]],
+    [enabled, s.fs16, s.fs14],   // if enabled than s.fs16 else s.fs14
+    [selected, [s.ttu, s.bold]], // if selected than s.ttu and s.bold
   )
 
   return (
