@@ -6,6 +6,7 @@
   "author": "farwayer <farwayer@gmail.com>",
   "license": "WTFPL",
   "main": "src",
+  "sideEffects": false,
   "peerDependencies": {
     "react-native": "*"
   },
