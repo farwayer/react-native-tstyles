@@ -2,13 +2,13 @@ import {StyleSheet} from 'react-native'
 import memo from './memo'
 
 
-export default function create(styles) {
+export function create(styles) {
   styles = StyleSheet.create(styles)
   const merge = memo(mergeStyles)
   return Object.assign(merge, styles)
 }
 
-function mergeStyles(...styles) {
+export function mergeStyles(...styles) {
   return flattenExists(styles)
 }
 

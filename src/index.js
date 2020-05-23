@@ -4,7 +4,7 @@ import {Image} from './image'
 import {dimensions} from './dimensions'
 import {colors} from './colors'
 import {indexes} from './etc'
-import create from './create'
+import {create} from './utils'
 
 
 const DefaultDimensions = [
