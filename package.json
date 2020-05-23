@@ -10,7 +10,6 @@
   "peerDependencies": {
     "react-native": "*"
   },
-  "dependencies": {},
   "keywords": [
     "tachyons",
     "styles",
@@ -18,5 +17,8 @@
     "stylesheet",
     "react-native",
     "react-native-styles"
+  ],
+  "files": [
+    "src"
   ]
 }
