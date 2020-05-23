@@ -14,16 +14,16 @@ config.
 ### Default styles
 
 ```js
+/* View styles: {
+  marginHorizontal: 16,
+  flex: 1,
+  flexDirection: 'row',
+  justifyContent: 'flex-end',
+} */
+
 import s from 'react-native-tstyles'
 
 function MyView() {
-  /* View styles: {
-    marginHorizontal: 16,
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-  } */
-  
   return (
     <View style={s(s.mh16, s.f1, s.row, s.jcfe)}>
       ...
@@ -66,29 +66,29 @@ export default createStyles({
 #### paper-with-text.js
 
 ```js
+/* View styles: {
+  marginHorizontal: 14,
+  flex: 1,
+  alignItems: 'center',
+  elevation: 1,
+  shadowOffset: {
+    width: 1,
+    height: 1,
+  },
+  shadowRadius: 1,
+  shadowOpacity: 0.2,
+  borderRadius: 2,
+  backgroundColor: 'white',
+} */
+  
+/* Text styles: {
+  fontSize: 56,
+  color: '#6963d6',
+} */
+
 import s from 'ui/styles'
 
 export default function PaperWithText({text}) {
-  /* View styles: {
-    marginHorizontal: 14,
-    flex: 1,
-    alignItems: 'center',
-    elevation: 1,
-    shadowOffset: {
-      width: 1,
-      height: 1,
-    },
-    shadowRadius: 1,
-    shadowOpacity: 0.2,
-    borderRadius: 2,
-    backgroundColor: 'white',
-  } */
-  
-  /* Text styles: {
-    fontSize: 56,
-    color: '#6963d6',
-  } */
-  
   return (
      <View style={s(s.mh14, s.f1, s.aic, s.paper)}>
        <Text style={s(s.fs56, s.purple)}>
