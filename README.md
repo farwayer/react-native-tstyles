@@ -41,45 +41,57 @@ import {createStyles} from 'react-native-tstyles'
 
 export default createStyles({
   dimensions: [14], // extra, default in dimensions.js
-  fontSizes: [56], // extra, default 0-48
-  indexes: [14], // for zIndex and elevation; extra, default 0-10
+  fontSizes: [56],  // extra, default 0-48
+  indexes: [14],    // for zIndex and elevation; extra, default 0-10
   colors: {
     White: '#ffffff',
     Purple: '#6963d6',
   },
-  extra: { // custom extra styles
-    boldItalic: {
-      fontWeight: 'bold',
-      fontStyle: 'italic', 
+  styles: { // custom extra styles
+    paper: {
+      elevation: 1,
+      shadowOffset: {
+        width: 1,
+        height: 1,
+      },
+      shadowRadius: 1,
+      shadowOpacity: 0.2,
+      borderRadius: 2,
+      backgroundColor: 'white', 
     },
   },
 })
 ```
 
-#### view-with-text.js
+#### paper-with-text.js
 
 ```js
 import s from 'ui/styles'
 
-export default function ViewWithText({text}) {
+export default function PaperWithText({text}) {
   /* View styles: {
     marginHorizontal: 14,
     flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    backgroundColor: '#ffffff',
+    alignItems: 'center',
+    elevation: 1,
+    shadowOffset: {
+      width: 1,
+      height: 1,
+    },
+    shadowRadius: 1,
+    shadowOpacity: 0.2,
+    borderRadius: 2,
+    backgroundColor: 'white',
   } */
   
   /* Text styles: {
-    fontWeight: 'bold',
-    fontStyle: 'italic',
     fontSize: 56,
     color: '#6963d6',
   } */
   
   return (
-     <View style={s(s.mh14, s.f1, s.row, s.jcfe, s.bgWhite)}>
-       <Text style={s(s.boldItalic, s.fs56, s.purple)}>
+     <View style={s(s.mh14, s.f1, s.aic, s.paper)}>
+       <Text style={s(s.fs56, s.purple)}>
          {text}
        </Text>
      </View>
@@ -120,8 +132,8 @@ function SelectableText({
   ...props
 }) {
   const textStyle = cn(
-    [enabled, s.fs16, s.fs14],   // if enabled than s.fs16 else s.fs14
-    [selected, [s.ttu, s.bold]], // if selected than s.ttu and s.bold
+    [enabled, s.fs16, s.fs14], // if enabled than s.fs16 else s.fs14
+    [selected, [s.ttu, s.b]],  // if selected than s.ttu and s.b
   )
 
   return (

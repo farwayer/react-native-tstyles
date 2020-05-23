@@ -2,6 +2,7 @@
 
 ### 0.0.10
 
+- rename `extra` to `styles` in config
 - f0 -> flex: 0
 - image resizeMode:  
   is -> stretch  
