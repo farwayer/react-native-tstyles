@@ -4,7 +4,6 @@ _Tachyons-like styles for React Native_
 
 [![NPM version](https://img.shields.io/npm/v/react-native-tstyles.svg)](https://www.npmjs.com/package/react-native-tstyles)
 
-**Be care: project is WIP and API can change before v1 release.**
 
 ## Configuration
 
@@ -25,7 +24,7 @@ import s from 'react-native-tstyles'
 
 function MyView() {
   return (
-    <View style={s(s.mh16, s.f1, s.row, s.jcfe)}>
+    <View style={s`mh16 f1 row jcfe`}>
       ...
     </View>
   )  
@@ -46,6 +45,7 @@ export default createStyles({
   colors: {
     White: '#ffffff',
     Purple: '#6963d6',
+    Yellow: '#FFFF00',
   },
   styles: { // custom extra styles
     paper: {
@@ -88,10 +88,10 @@ export default createStyles({
 
 import s from 'ui/styles'
 
-export default function PaperWithText({text}) {
+export default function PaperWithText({text, warn}) {
   return (
-     <View style={s(s.mh14, s.f1, s.aic, s.paper)}>
-       <Text style={s(s.fs56, s.purple)}>
+     <View style={s`mh14 f1 aic paper`}>
+       <Text style={s(`fs56`, warn ? `yellow` : `purple`)}>
          {text}
        </Text>
      </View>
@@ -101,22 +101,18 @@ export default function PaperWithText({text}) {
 
 ## Preventing extra rendering memo'ized and Pure- components
 
-Use `s()` function instead of passing array of styles to `style` prop. It will
-take care result `style` property do not change if source styles are the same.
+`s` take care result `style` property do not change if source styles are the same.
 Styles checked by the reference not by the value. So prevent using new js
-objects each render time like `s(s.row, {height: 160})`. If you need custom
+objects each render time like `s('row', {height: 160})`. If you need custom
 style than you should create it once and use as function argument
-`cn(s.row, heightStyle)`.
+`s('row', heightStyle)`.
 
-If you sure style is different each render time (animations for example)
-than skip using `s()` to prevent unnecessary savings to style cache.
-
-## cn() helper: classname alternative for ReactNative
+## cn() helper: classname for ReactNative
 
 You can use `cn()` helper for conditional styles. 
 
 ```js
-cn(
+s.cn(
   [flag1, onStyles1, offStyles1],
   [flag2, onStyles2, offStyles2],
   ...
@@ -124,16 +120,16 @@ cn(
 ```
 
 ```js
-import s, {cn} from 'react-native-tstyles'
+import s from 'react-native-tstyles'
 
 function SelectableText({
   enabled,
   selected,
   ...props
 }) {
-  const textStyle = cn(
-    [enabled, s.fs16, s.fs14], // if enabled than s.fs16 else s.fs14
-    [selected, [s.ttu, s.b]],  // if selected than s.ttu and s.b
+  const textStyle = s.cn(
+    [enabled, 'fs16', 'fs14'], // if enabled than s.fs16 else s.fs14
+    [selected, 'ttu b'],  // if selected than s.ttu and s.b
   )
 
   return (

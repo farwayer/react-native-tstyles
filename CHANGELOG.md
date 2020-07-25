@@ -1,5 +1,9 @@
 ## Changelog
 
+### 1.0.0
+
+- string literals: s`mh16 fs12 b`
+
 ### 0.0.11
 
 - fix invalid import

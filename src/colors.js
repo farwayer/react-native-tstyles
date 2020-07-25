@@ -1,20 +1,21 @@
+import {capitalize, decapitalize} from './utils'
+
+
+const ColorStyles = {
+  bg: 'backgroundColor',
+  bc: 'borderColor',
+}
+
 export function colors(colors = {}) {
   return Object.entries(colors).reduce((res, [name, color]) => {
-    name = capitalize(name)
-    res[`bg${name}`] = {backgroundColor: color}
-    res[`bc${name}`] = {borderColor: color}
-
     name = decapitalize(name)
     res[name] = {color}
 
+    name = capitalize(name)
+    Object.entries(ColorStyles).forEach(([prefix, styleName]) => {
+      res[prefix + name] = {[styleName]: color}
+    })
+
     return res
   }, {})
-}
-
-function capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1)
-}
-
-function decapitalize(str) {
-  return str.charAt(0).toLowerCase() + str.slice(1)
 }

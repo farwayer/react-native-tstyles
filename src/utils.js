@@ -1,27 +1,31 @@
-import {StyleSheet} from 'react-native'
-import memo from './memo'
+import {isStr, isArr} from 'istp'
 
 
-export function create(styles) {
-  styles = StyleSheet.create(styles)
-  const merge = memo(mergeStyles)
-  return Object.assign(merge, styles)
+export function mergeStyles(sheet) {
+  return (...styles) => processStyleList(sheet, styles)
 }
 
-export function mergeStyles(...styles) {
-  return flattenExists(styles)
-}
+function processStyleList(sheet, styles, res = []) {
+  return styles.reduce((res, style) => {
+    if (!style) return res
 
-function flattenExists(list, res = []) {
-  list.forEach(item => {
-    if (!item) return
-
-    if (Array.isArray(item)) {
-      flattenExists(item, res)
-    } else {
-      res.push(item)
+    if (isStr(style)) {
+      style = style.split(' ').map(name => sheet[name])
     }
-  })
 
-  return res
+    if (isArr(style)) {
+      return processStyleList(sheet, style, res)
+    }
+
+    res.push(style)
+    return res
+  }, res)
+}
+
+export function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
+export function decapitalize(str) {
+  return str.charAt(0).toLowerCase() + str.slice(1)
 }

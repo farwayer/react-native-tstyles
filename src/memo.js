@@ -18,20 +18,20 @@ class Cache {
   _weakMap = new WeakMap()
 
   set(key, val) {
-    this._store(key).set(key, val)
+    this._getStore(key).set(key, val)
     return val
   }
 
   get(key) {
-    return this._store(key).get(key)
+    return this._getStore(key).get(key)
   }
 
-  _store(key) {
-    return isObj(key) ? this._weakMap : this._map
+  _getStore(key) {
+    return isObjLike(key) ? this._weakMap : this._map
   }
 }
 
-function isObj(val) {
+function isObjLike(val) {
   if (val === null) return false
   const type = typeof val
   return type === 'object' || type === 'function'

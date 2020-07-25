@@ -24,10 +24,15 @@ export const Text = {
   u: {textDecorationLine: 'underline'},
 }
 
+const FontSizeStyles = {
+  fs: 'fontSize',
+}
 
 export function fontSizes(sizes = []) {
   return sizes.reduce((res, s) => {
-    res[`fs${s}`] = {fontSize: s}
+    Object.entries(FontSizeStyles).forEach(([prefix, styleName]) => {
+      res[prefix + s] = {[styleName]: s}
+    })
     return res
   }, {})
 }

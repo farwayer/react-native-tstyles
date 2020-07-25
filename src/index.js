@@ -1,10 +1,13 @@
+import {StyleSheet} from 'react-native'
 import {Flex} from './flex'
 import {Text, fontSizes} from './text'
 import {Image} from './image'
 import {dimensions} from './dimensions'
 import {colors} from './colors'
 import {indexes} from './etc'
-import {create} from './utils'
+import {mergeStyles} from './utils'
+import memo from './memo'
+import cnForSheet from './cn'
 
 
 const DefaultDimensions = [
@@ -37,4 +40,9 @@ export function createStyles(config = {}) {
   })
 }
 
-export cn from './cn'
+function create(styles) {
+  const sheet = StyleSheet.create(styles)
+  const merge = memo(mergeStyles(sheet))
+  merge.cn = cnForSheet(sheet)
+  return Object.assign(merge, sheet)
+}
