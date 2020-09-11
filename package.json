@@ -1,6 +1,6 @@
 {
   "name": "react-native-tstyles",
-  "version": "1.0.0-beta1",
+  "version": "1.0.0-beta2",
   "description": "Tachyons-like styles for React Native",
   "repository": "farwayer/react-native-tstyles",
   "author": "farwayer <farwayer@gmail.com>",
