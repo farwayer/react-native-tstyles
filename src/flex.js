@@ -29,4 +29,8 @@ export const Flex = {
 
   abs: {position: 'absolute'},
   rel: {position: 'relative'},
+
+  ofv: {overflow: 'visible'},
+  ofh: {overflow: 'hidden'},
+  ofs: {overflow: 'scroll'},
 }
