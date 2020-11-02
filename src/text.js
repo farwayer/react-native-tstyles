@@ -26,6 +26,7 @@ export const Text = {
 
 const FontSizeStyles = {
   fs: 'fontSize',
+  lh: 'lineHeight',
 }
 
 export function fontSizes(sizes = []) {
