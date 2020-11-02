@@ -3,7 +3,8 @@
 ### 1.0.0
 
 - string literals: s`mh16 fs12 b`
-- overflow
+- overflow (ofv, ofh, ofs)
+- text line height (lh)
 
 ### 0.0.11
 
